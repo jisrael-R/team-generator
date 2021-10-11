@@ -1,0 +1,29 @@
+{
+  "name": "team-portfolio-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jisrael-R/team-portfolio-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jisrael-R/team-portfolio-generator/issues"
+  },
+  "homepage": "https://github.com/jisrael-R/team-portfolio-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}

@@ -29,6 +29,15 @@ const createManager = () =>{
             }
         }
     });
+    const validateEmail = ()=>({
+        validate: answer => {
+            const pass = answer.match(/\S+@\S+\.\S+/);
+            if (pass) {
+              return true;
+            }
+            return 'Please enter a valid email address.';
+          }
+    });
  
     return inquirer.prompt([
         {
@@ -48,7 +57,7 @@ const createManager = () =>{
             type:'input',
             name: 'email',
             message: "What is your manager's email?",
-            ...validate()
+            ...validateEmail()
 
         },
         {
@@ -65,7 +74,7 @@ const createManager = () =>{
         employeeArr.push(manager);
     });
 };
-
+// check for invalid inputs like strings
 const createEmployee = () =>{
     const validateNumbers = () => ({
         validate: input => {
@@ -78,6 +87,7 @@ const createEmployee = () =>{
             
         },
     });
+    // checks for empty or unanswered questions
     const validate = () =>({
         validate: input =>{
             if (!input || input === ''){
@@ -87,18 +97,19 @@ const createEmployee = () =>{
             }
         }
     });
-    const generateIntern = () =>({
-        type:'input',
-                name:'name',
-                message: 'What is your Intern name?',
-                ...validate()
+
+    // checks for correct email
+    const validateEmail = ()=>({
+        validate: answer => {
+            const pass = answer.match(/\S+@\S+\.\S+/);
+            if (pass) {
+              return true;
+            }
+            return 'Please enter a valid email address.';
+          }
     });
-    const gernerateEngineer= () =>({
-        type:'input',
-                name:'name',
-                message: 'What is your Engineer name?',
-                ...validate()
-    });
+   
+    
     console.log(`
     ================================
      Add employees to the team page
@@ -112,6 +123,7 @@ const createEmployee = () =>{
             name:'role',
             message:"What kind of employee you want to add?",
             choices:['Engineer', 'Intern'],
+           
         },
         {
             type: 'input',
@@ -120,16 +132,16 @@ const createEmployee = () =>{
             ...validate()
         },
         {
-            type:'input',
+            type: 'input',
             name:'id',
-            message:"What is your Employee's ID",
+            message:"What is your ID?",
             ...validateNumbers()
         },
         {
             type:'input',
             name:'email',
             message:"What is your Employee Email?",
-           ...validate()
+            ...validateEmail()
         },
         {
             type: 'input',

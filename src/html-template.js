@@ -1,8 +1,9 @@
 const generateHtml = team =>{
 
     const generateManager = manager =>{
-        return `<div class="m-4">
-        <div class="card" style="width: 17rem;">
+        return `
+        <div class="m-4">
+           <div class="card" style="width: 17rem;">
             <div class="card-body bg-primary">
             <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-title"><i class='fas fa-mug-hot'></i>${manager.getRole()}</h3>
@@ -18,7 +19,8 @@ const generateHtml = team =>{
     </div> `
     };
     const generateEngineer = engineer =>{
-        return `<div class="m-4">
+        return `
+        <div class="col m-4">
         <div class="card" style="width: 17rem;">
             <div class="card-body bg-primary">
             <h2 class="card-title">${engineer.getName()}</h2>
@@ -27,32 +29,31 @@ const generateHtml = team =>{
             <div class="container-fluid bg-light p-4">
                 <ul class="list-group list-group">
                 <li class="list-group-item">ID: ${engineer.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                <li class="list-group-item">Email: <a href="${engineer.getEmail()}">${engineer.getEmail()}</a></li>
                 <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
                 </ul>
             </div>
         </div>
-    </div> 
-    </div> `
+    </div>`
     };
 
     const generateIntern = intern =>{
-        return `<div class="m-4">
+        return `
+        <div class="col m-4">
         <div class="card" style="width: 17rem;">
             <div class="card-body bg-primary">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class='fas fa-user-graduate'></i> ${intern.getRole()}</h3>
+            <h3 class="card-title"><i class='fas fa-user-graduate'></i>${intern.getRole()}</h3>
             </div>
             <div class="container-fluid bg-light p-4">
                 <ul class="list-group list-group">
                 <li class="list-group-item">ID: ${intern.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                <li class="list-group-item">Email: <a href="${intern.getEmail()}">${intern.getEmail()}</a></li>
                 <li class="list-group-item">School: <a href="https://www.google.com/search?q=${intern.getSchool()}" target="_blank">${intern.getSchool()}</a></li>
                 </ul>
             </div>
         </div>
-    </div> 
-    </div> `;
+    </div>`;
     };
 
     const html = [];
@@ -102,10 +103,15 @@ module.exports = team =>{
          </div>
          <!-- main section -->
          <main>
-             <div class="d-flex justify-content-center">
-                ${generateHtml(team)} 
+         <div class="container">
+         <div class="row">
+             <div class="card-employee col-12 d-flex justify-content-center">
+             ${generateHtml(team)}
              </div>
-         </main>
+         </div>
+        </div>
+    </main>
+          
     </body>
     </html>`
 };

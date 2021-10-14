@@ -21,3 +21,6 @@
 i{
     margin-right: .3em;
 }
+.card-employee{
+    flex-flow: wrap;
+}

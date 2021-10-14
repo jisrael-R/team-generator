@@ -9,9 +9,9 @@ const generateHtml = team =>{
             </div>
             <div class="container-fluid bg-light p-4">
                 <ul class="list-group list-group">
-                <li class="list-group-item">ID:${manager.getId()}</li>
-                <li class="list-group-item">Email:<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                <li class="list-group-item">Office:${manager.getOffice()}</li>
+                <li class="list-group-item">ID: ${manager.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                <li class="list-group-item">Office: ${manager.getOffice()}</li>
                 </ul>
             </div>
         </div>
@@ -26,12 +26,13 @@ const generateHtml = team =>{
             </div>
             <div class="container-fluid bg-light p-4">
                 <ul class="list-group list-group">
-                <li class="list-group-item">ID:${engineer.getId()}</li>
-                <li class="list-group-item">Email:<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">Github:${engineer.getGithub()}</li>
+                <li class="list-group-item">ID: ${engineer.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
                 </ul>
             </div>
         </div>
+    </div> 
     </div> `
     };
 
@@ -40,16 +41,17 @@ const generateHtml = team =>{
         <div class="card" style="width: 17rem;">
             <div class="card-body bg-primary">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class='fas fa-user-graduate'></i>${intern.getRole()}</h3>
+            <h3 class="card-title"><i class='fas fa-user-graduate'></i> ${intern.getRole()}</h3>
             </div>
             <div class="container-fluid bg-light p-4">
                 <ul class="list-group list-group">
-                <li class="list-group-item">ID:${intern.getId()}</li>
-                <li class="list-group-item">Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                <li class="list-group-item">School:${intern.getSchool()}</li>
+                <li class="list-group-item">ID: ${intern.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                <li class="list-group-item">School: <a href="https://www.google.com/search?q=${intern.getSchool()}" target="_blank">${intern.getSchool()}</a></li>
                 </ul>
             </div>
         </div>
+    </div> 
     </div> `;
     };
 
@@ -87,7 +89,7 @@ module.exports = team =>{
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/ef612db32d.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../dist/style.css">
         <title>Team Generator</title>
     </head>
     <body>
@@ -100,7 +102,7 @@ module.exports = team =>{
          </div>
          <!-- main section -->
          <main>
-             <div class="col-12 d-flex justify-content-center">
+             <div class="d-flex justify-content-center">
                 ${generateHtml(team)} 
              </div>
          </main>

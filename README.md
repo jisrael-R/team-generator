@@ -1,4 +1,4 @@
-# team generator
+# Team Generator
   
   
   ## Licensing:

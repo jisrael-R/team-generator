@@ -24,6 +24,12 @@
   
  
   ## Usage:
+  - Download or clone repo
+  - Open repo 
+  - Run npm i to install depencies
+  - Run node index.js
+  - Respond every question till the end.
+  - Go to dist/ directory and open the html file.
   
   ## License:
  > None

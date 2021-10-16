@@ -1,0 +1,26 @@
+.title{
+    background-color: rgb(249, 103, 103);
+    color: white;
+}
+.card-title{
+    color: white;
+}
+.response{
+    color: rgb(67, 67, 232);
+    margin-left: 2px;
+}
+.card{
+ box-shadow:  4px 3px 4px gray;
+ 
+}
+.card-body{
+    width: 100.5%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+i{
+    margin-right: .3em;
+}
+.card-employee{
+    flex-flow: wrap;
+}

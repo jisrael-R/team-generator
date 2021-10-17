@@ -11,11 +11,13 @@ const employeeArr =[];
 const createManager = () =>{
     const validateNumbers = () => ({
         validate: input => {
-            if (input === '' || (isNaN(input))) {
-                return'Please provide a valid number greater then 0'
+            if (input === '') {
+                return'Please provide a valid answer';
                 
-            }else {
-                return true;
+            }else if (isNaN(input){
+                  return 'Please provide a valid number greater then 0';
+                  } else{
+                    return true;
             }
             
         },
